@@ -47,6 +47,7 @@
     "redux-logger": "^2.6.1",
     "request": "^2.74.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "yandex-translate": "^2.1.0"
   }
 }
