@@ -1,5 +1,7 @@
 ### node etc ###
 
+#Yandex
+server/config/config.js
 
 # Logs
 logs
