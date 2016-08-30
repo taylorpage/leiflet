@@ -1,4 +1,5 @@
 import React from 'react';
+import Translator from '../translator/Translator';
 
 export default class Main extends React.Component {
   constructor(props){
@@ -9,7 +10,8 @@ export default class Main extends React.Component {
     return (
       <div>
         Test
+        <Translator />
       </div>
-      )
+    )
   }
 }
