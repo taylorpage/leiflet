@@ -8,4 +8,4 @@ export default(
   <Route path='/' component={ Main }>
     <Route path='translator' component={ Translator }/>
   </Route>
-  )
+)
