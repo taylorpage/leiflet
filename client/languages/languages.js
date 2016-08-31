@@ -1,5 +1,4 @@
 const languages = [
-
 { lang: 'Azerbaijan', code: 'az' }, { lang: 'Macedonian', code: 'mk' },
 { lang: 'Albanian',   code: 'sq' }, { lang: 'Maori',      code: 'mi' },
 { lang: 'English',    code: 'en' }, { lang: 'Marathi',    code: 'mr' },

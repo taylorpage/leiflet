@@ -6,6 +6,7 @@ export default class Translator extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      languages: languages,
       clientPhrase: '',
       clientLang: '',
       userPhrase: '',
@@ -28,15 +29,14 @@ export default class Translator extends React.Component {
   }
 
   translateClientPhrase() {
-    // axios.post('/translate/client', { phrase: this.state.clientPhrase, lang: this.state.clientLang })
-    // .then(function(data) {
-    //   console.log(data);
-    // })
-    console.log(languages);
+    axios.post('/translate/client', { phrase: this.state.clientPhrase, from: this.state.clientLang, to: this.state.userLang })
+    .then(function(data) {
+      console.log(data);
+    })
   }
 
   translateUserPhrase() {
-    axios.post('/translate/user', { phrase: this.state.userPhrase, lang: this.state.userLang })
+    axios.post('/translate/user', { phrase: this.state.userPhrase, from: this.state.userLang, to: this.state.clientLang })
     .then(function(data) {
       console.log(data);
     })
@@ -47,21 +47,27 @@ export default class Translator extends React.Component {
       <div>
         <div className="col-xs-12">
           <input className="text-inputs" type="text" id="client-text" onChange={ this.handleClientChange.bind(this) }></input>
-          <select id="client-lang">
-            <option value="ru">Russian</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-            <option value="German">German</option>
+          <select id="client-lang" onChange={ this.handleClientChange.bind(this) }>
+            {
+              this.state.languages.map(lang => {
+                return (
+                  <option value= { lang.code }>{ lang.lang }</option>
+                )
+              })
+            }
           </select>
           <button onClick={ this.translateClientPhrase.bind(this) }>TRANSLATE</button>
         </div>
         <div className="col-xs-12">
-          <input className="text-inputs" type="text" id="user" onChange={ this.handleUserChange.bind(this) }></input>
-          <select>
-            <option value="English">English</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-            <option value="German">German</option>
+          <input className="text-inputs" type="text" id="user-text" onChange={ this.handleUserChange.bind(this) }></input>
+          <select id="user-lang" onChange={ this.handleUserChange.bind(this) }>
+            {
+              this.state.languages.map(lang => {
+                return (
+                  <option value= { lang.code }>{ lang.lang }</option>
+                )
+              })
+            }
           </select>
           <button onClick={ this.translateUserPhrase.bind(this) }>TRANSLATE</button>
         </div>
