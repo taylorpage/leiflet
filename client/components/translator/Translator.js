@@ -52,6 +52,7 @@ export default class Translator extends React.Component {
         <div className="col-xs-12 text-field">
           <h3>Friend</h3>
           <select id="client-lang"
+                  className="dropdown"
                   onChange={ this.handleClientChange.bind(this) }>
             {
               this.state.languages.map(lang => {
@@ -67,12 +68,13 @@ export default class Translator extends React.Component {
                  onChange={ this.handleClientChange.bind(this) }>
           </input>
           <button className="translate"
-                  onClick={ this.translateClientPhrase.bind(this) }>TRANSLATE</button>
+                  onClick={ this.translateClientPhrase.bind(this) }>Translate</button>
         </div>
 
         <div className="col-xs-12 text-field">
           <h3>You</h3>
           <select id="user-lang"
+                  className="dropdown"
                   onChange={ this.handleUserChange.bind(this) }>
             {
               this.state.languages.map(lang => {
@@ -88,7 +90,10 @@ export default class Translator extends React.Component {
                  onChange={ this.handleUserChange.bind(this) }>
           </input>
           <button className="translate"
-                  onClick={ this.translateUserPhrase.bind(this) }>TRANSLATE</button>
+                  onClick={ this.translateUserPhrase.bind(this) }>Translate</button>
+        </div>
+        <div className="col-xs-12 mic">
+          <button className="text-center"></button>
         </div>
       </div>
     )
