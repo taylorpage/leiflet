@@ -1,3 +1,39 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+body {
+}
+.container {
+  background-color: rgb(230,230,230);
+}
+.title {
+  text-align: center;
+  margin: 100px auto;
+  font-family: 'Raleway';
+  font-size: 200px;
+}
+.text-field {
+  text-align: center;
+  margin-top: 150px;
+}
 .text-inputs {
-  width: 400px;
+  margin-top: 20px;
+  width: 500px;
+  height: 50px;
+  font-size: 28px;
+  text-align: center;
+  vertical-align: bottom;
+}
+.translate {
+  height: 50px;
+  background-color: rgb(250,250,250);
+  border: 1px solid rgb(150,150,150);
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.dropdown {
+  height: 50px;
+  margin-right: 10px;
+}
+.mic {
+  width: 50px;
+  background: url('https://maxcdn.icons8.com/Share/icon/Music//microphone1600.png');
 }

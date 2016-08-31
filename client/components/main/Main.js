@@ -9,7 +9,7 @@ export default class Main extends React.Component {
   render() {
     return (
       <div>
-        Test
+        <h1 className="col-xs-12 title">Leiflet</h1>
         <Translator />
       </div>
     )
