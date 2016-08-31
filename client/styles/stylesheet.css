@@ -1,3 +1,25 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+body {
+}
+.container {
+  background-color: rgb(230,230,230);
+}
+.title {
+  text-align: center;
+  margin: 100px auto;
+  font-family: 'Raleway';
+  font-size: 200px;
+}
+.text-field {
+  text-align: center;
+  margin: 100px 0px;
+}
 .text-inputs {
-  width: 400px;
+  width: 500px;
+  height: 50px;
+  font-size: 28px;
+  text-align: center;
+}
+.translate {
+  height: 50px;
 }
