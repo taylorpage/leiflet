@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import languages from '../../languages/languages.js';
 
 export default class Translator extends React.Component {
   constructor(props){
@@ -27,10 +28,11 @@ export default class Translator extends React.Component {
   }
 
   translateClientPhrase() {
-    axios.post('/translate/client', { phrase: this.state.clientPhrase, lang: this.state.clientLang })
-    .then(function(data) {
-      console.log(data);
-    })
+    // axios.post('/translate/client', { phrase: this.state.clientPhrase, lang: this.state.clientLang })
+    // .then(function(data) {
+    //   console.log(data);
+    // })
+    console.log(languages);
   }
 
   translateUserPhrase() {
