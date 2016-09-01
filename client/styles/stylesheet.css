@@ -7,12 +7,20 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+.nav {
+  text-align: right;
+}
+.nav .link {
+  color: white;
+  margin: 5px 10px;
+  text-decoration: none;
+}
 .container {
   height: 100vh;
 }
 .title {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 8%;
   font-family: 'Raleway';
   font-size: 130px;
   background-color: white;
@@ -43,7 +51,6 @@ body {
   width: 25px;
   border-radius: 100px;
 }
-
 .mic-button {
   margin-top: 20px;
   margin-left: 47.5%;
