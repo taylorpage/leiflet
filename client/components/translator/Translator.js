@@ -10,7 +10,8 @@ export default class Translator extends React.Component {
       clientPhrase: '',
       clientLang: '',
       userPhrase: '',
-      userLang: ''
+      userLang: '',
+      recording: false
     }
   }
 
@@ -46,6 +47,17 @@ export default class Translator extends React.Component {
     })
   }
 
+  record(id) {
+    if (this.state.recording) {
+      document.getElementById(id).src = '../../styles/mic.png';
+    } else {
+      document.getElementById(id).src = '../../styles/mic-red.png';
+    }
+    this.setState({
+      recording: !this.state.recording
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -70,6 +82,14 @@ export default class Translator extends React.Component {
           <button className="translate"
                   onClick={ this.translateClientPhrase.bind(this) }>Translate</button>
         </div>
+        <div className="col-xs-12">
+          <button className="btn btn-default mic-button"
+                  onClick={ this.record.bind(this, 'client-mic') }>
+            <img className="mic"
+                 id="client-mic"
+                 src="../../styles/mic.png"></img>
+          </button>
+        </div>
 
         <div className="col-xs-12 text-field">
           <h3>You</h3>
@@ -92,8 +112,13 @@ export default class Translator extends React.Component {
           <button className="translate"
                   onClick={ this.translateUserPhrase.bind(this) }>Translate</button>
         </div>
-        <div className="col-xs-12 mic">
-          <button className="text-center"></button>
+        <div className="col-xs-12">
+          <button className="btn btn-default mic-button"
+                  onClick={ this.record.bind(this, 'user-mic') }>
+            <img className="mic"
+                 id="user-mic"
+                 src="../../styles/mic.png"></img>
+          </button>
         </div>
       </div>
     )
