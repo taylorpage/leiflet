@@ -6,6 +6,6 @@ const translate = require('yandex-translate')(KEYS.TRANSAPI);
 
 exports.translator = function(phrase, to, from, cb) {
   translate.translate(phrase, { to: to, from: from }, function(err, res) {
-    console.log(res.text);
+    cb(res.text);
   })
 }

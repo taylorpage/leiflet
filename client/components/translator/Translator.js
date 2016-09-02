@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import languages from '../../languages/languages.js';
+import Conversation from '../conversation/Conversation';
 
 export default class Translator extends React.Component {
   constructor(props){
@@ -11,7 +12,8 @@ export default class Translator extends React.Component {
       clientLang: '',
       userPhrase: '',
       userLang: '',
-      recording: false
+      recording: false,
+      dialogue: []
     }
   }
 
@@ -30,20 +32,26 @@ export default class Translator extends React.Component {
   }
 
   translateClientPhrase() {
+    const context = this;
     axios.post('/translate/client', { phrase: this.state.clientPhrase,
                                       from: this.state.clientLang,
                                       to: this.state.userLang })
     .then(function(data) {
-      console.log(data);
+      context.setState({
+        dialogue: context.state.dialogue.concat({ pers: 'client', phrase: data })
+      })
     })
   }
 
   translateUserPhrase() {
+    const context = this;
     axios.post('/translate/user', { phrase: this.state.userPhrase,
                                     from: this.state.userLang,
                                     to: this.state.clientLang })
     .then(function(data) {
-      console.log(data);
+      context.setState({
+        dialogue: context.state.dialogue.concat({ pers: 'user', phrase: data })
+      })
     })
   }
 
@@ -120,6 +128,7 @@ export default class Translator extends React.Component {
                  src="../../styles/mic.png"></img>
           </button>
         </div>
+        <Conversation dialogue={ this.state.dialogue } />
       </div>
     )
   }
