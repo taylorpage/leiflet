@@ -13,7 +13,13 @@ export default class Translator extends React.Component {
       userPhrase: '',
       userLang: '',
       recording: false,
-      dialogue: []
+      dialogue: [ { pers: 'user', phrase: 'hello' },
+                  { pers: 'client', phrase: 'how are you?'},
+                  { pers: 'user', phrase: 'good and you?' },
+                  { pers: 'client', phrase: 'quite well!' },
+                  { pers: 'user', phrase: 'thats good to hear' },
+                  { pers: 'user', phrase: 'Do you know how to find the bakery?' }
+                ]
     }
   }
 
